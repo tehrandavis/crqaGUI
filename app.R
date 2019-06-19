@@ -149,7 +149,7 @@ server <- function(input, output) {
                         radiusspan = 200, 
                         radiussample = 10,
                         normalize = 2, 
-                        rescale = 2, 
+                        rescale = 1, 
                         mindiagline = 2,
                         minvertline = 2, 
                         tw = 0, 
@@ -182,7 +182,7 @@ server <- function(input, output) {
         timeseries2 <- ts2$X1
         
         normalize = 2
-        rescale = 2            
+        rescale = 1            
         mindiagline = 2
         minvertline = 2 
         tw = 0 
@@ -285,7 +285,7 @@ server <- function(input, output) {
         timeseries2 <- ts2$X1
         
         normalize = 2
-        rescale = 2            
+        rescale = 1            
         mindiagline = 2
         minvertline = 2 
         tw = 0 
@@ -328,7 +328,7 @@ server <- function(input, output) {
         timeseries2 <- ts2$X1
         
         normalize = 2
-        rescale = 2            
+        rescale = 1            
         mindiagline = 2
         minvertline = 2 
         tw = 0 
