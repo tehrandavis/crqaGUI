@@ -44,6 +44,8 @@ ui <- fluidPage(
                                  ".txt")
             ),
             
+            textInput("maxDelay", "MAX Delay"),
+            
             actionButton("getParms","Get CRQA Parameters"),
             
             textInput("embed", "Embedding dimension"),
@@ -144,7 +146,9 @@ server <- function(input, output) {
             timeseries1 <- ts1 
             timeseries2 <- ts2 
             
-            par <- list(lgM = 200,
+            lgM <- as.numeric(input$maxDelay)
+            
+            par <- list(lgM = lgM,
                         steps = seq(1, 10, 1),
                         radiusspan = 200, 
                         radiussample = 10,
@@ -321,8 +325,8 @@ server <- function(input, output) {
         filename1 <- input$file1$datapath
         filename2 <- input$file2$datapath
         
-        ts1 <- readr::read_csv(filename1, col_names = FALSE) 
-        ts2 <- readr::read_csv(filename2, col_names = FALSE)
+        ts1 <- readr::read_csv(filename1, col_names = FALSE)$X1
+        ts2 <- readr::read_csv(filename2, col_names = FALSE)$X1
         
         timeseries1 <- ts1$X1
         timeseries2 <- ts2$X1
