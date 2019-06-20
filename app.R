@@ -262,7 +262,7 @@ server <- function(input, output) {
                                mindiagline = mindiagline, 
                                minvertline = minvertline,
                                tw = tw) 
-        maxlag <- diag_out$maxlag %>% as_tibble()
+        maxlag <- (diag_out$maxlag -(ws+1)) %>% as_tibble()
         maxlag[2:3,] <- maxlag[1]
         names(maxlag) <- "maxlag"
         
