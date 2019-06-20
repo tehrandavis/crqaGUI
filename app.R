@@ -7,16 +7,14 @@
 #    http://shiny.rstudio.com/
 #
 
-library(shiny)
-library(tidyverse)
-library(shiny)
-library(crqa)
-library(plotly)
-library(SparseM)
-library(shinycssloaders)
-library(promises)
-library(future)
-plan(multiprocess)
+pacman::p_load(tidyverse, 
+       shiny, 
+       crqa, 
+       plotly, 
+       SparseM, 
+       shinycssloaders, 
+       promises, 
+       future)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
